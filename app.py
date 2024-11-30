@@ -53,7 +53,7 @@ def recommend_book(self,book_name):
 selected_books=st.selectbox("Type or select a book",book_names)
 
 if st.button('Show Recommendation'):
-       recommendation_books,poster_url=recommend_books(selected_books)
+       recommendation_books,poster_url=recommend_book(selected_books)
        col1,col2,col3,col4,col5=st.columns(5)
 
        with col1:
