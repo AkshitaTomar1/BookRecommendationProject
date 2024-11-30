@@ -10,4 +10,4 @@ book_pivot=pickle.load(open('artifacts/book_pivot.pkl','rb'))
 
 
 
-selected_books=st.selectbox("Type or select a book",)
+selected_books=st.selectbox("Type or select a book",book_names)
