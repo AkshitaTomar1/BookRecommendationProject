@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: src
+Version: 0.0.1
+Summary: A small local packages for ML based books recommendations
+Home-page: https://github.com/AkshitaTomar1/BookRecommendationProject
+Author: AKSHITA TOMAR
+Author-email: axtomar7@gmail.com
+License: MIT
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: streamlit
+Requires-Dist: numpy
+
+Book Recommender System using Machine Learning
