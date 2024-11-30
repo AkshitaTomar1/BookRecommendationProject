@@ -8,13 +8,12 @@ book_names=pickle.load(open('artifacts/book_names.pkl','rb'))
 final_rating=pickle.load(open('artifacts/final_rating.pkl','rb'))
 book_pivot=pickle.load(open('artifacts/book_pivot.pkl','rb'))
 
-def fetch_poster(self,suggestion):
+def fetch_poster(suggestion):
         
             book_name = []
             ids_index = []
             poster_url = []
-            book_pivot =  pickle.load(open(self.recommendation_config.book_pivot_serialized_objects,'rb'))
-            final_rating =  pickle.load(open(self.recommendation_config.final_rating_serialized_objects,'rb'))
+            
 
             for book_id in suggestion:
                 book_name.append(book_pivot.index[book_id])
@@ -32,15 +31,14 @@ def fetch_poster(self,suggestion):
  
  
  
-def recommend_book(self,book_name):
+def recommend_book(book_name):
         
             books_list = []
-            model = pickle.load(open(self.recommendation_config.trained_model_path,'rb'))
-            book_pivot =  pickle.load(open(self.recommendation_config.book_pivot_serialized_objects,'rb'))
+            
             book_id = np.where(book_pivot.index == book_name)[0][0]
             distance, suggestion = model.kneighbors(book_pivot.iloc[book_id,:].values.reshape(1,-1), n_neighbors=6 )
 
-            poster_url = self.fetch_poster(suggestion)
+            poster_url = fetch_poster(suggestion)
             
             for i in range(len(suggestion)):
                     books = book_pivot.index[suggestion[i]]
